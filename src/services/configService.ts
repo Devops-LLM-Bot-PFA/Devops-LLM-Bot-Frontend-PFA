@@ -1,6 +1,5 @@
 import { httpClient, API_CONFIG } from '@/config/api';
 
-// Types for configuration
 export interface ConfigRequest {
   id?: string;
   webhookProxyUrl: string;
