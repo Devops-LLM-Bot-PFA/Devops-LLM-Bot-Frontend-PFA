@@ -23,8 +23,9 @@ const CredentialsPage: React.FC = () => {
       if (!fileContent || typeof fileContent !== 'string' || fileContent.trim().length === 0) {
         throw new Error('Private Key is required and must be a string.');
       }
-      const cleanedPrivateKey = fileContent.replace(/\n|\r/g, ''); // Remove newlines
-      updateCredentials('privateKey', cleanedPrivateKey);
+      const lines = fileContent.split(/\r?\n/).map((line) => line.trim());
+      const escapedKey = lines.join('\n');
+      updateCredentials('privateKey', escapedKey);
       toast({
         title: "File Uploaded",
         description: "Private key file has been uploaded successfully.",
