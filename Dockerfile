@@ -8,8 +8,6 @@ RUN npm ci
 COPY .env.production ./
 COPY . .
 
-RUN ls -la /app
-
 RUN npm run build:prod
 
 FROM nginx:alpine AS runner
