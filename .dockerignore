@@ -5,7 +5,6 @@ dist
 Dockerfile
 docker-compose*.yml
 *.log
-.env.example
 *.md
 .vscode
 .idea
